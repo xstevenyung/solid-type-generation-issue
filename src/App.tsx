@@ -6,11 +6,20 @@ const App: Component = () => {
 
   return (
     <ul>
+      {/* This throw an error */}
       <For each={numbers()}>
         {(number) => {
           return <li>{number}</li>;
         }}
       </For>
+
+      {/* This doesn't */}
+      <For
+        each={numbers()}
+        children={(number) => {
+          return <li>{number}</li>;
+        }}
+      />
     </ul>
   );
 };
